@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.spdemo.mapper.A01Mapper">
+    <select id="queryA01ByA00" resultType="com.example.spdemo.entity.A01">
+        select * from a01 where a00 = #{a00}
+    </select>
+
+    <select id="queryUp50" resultType="map">
+        SELECT * FROM A01 WHERE MONTHS_BETWEEN(SYSDATE, A0107) / 12 &lt;= 50
+    </select>
+
+    <select id="selectList" resultType="com.example.spdemo.entity.A01">
+        SELECT * FROM A01 WHERE ROWNUM &lt;= 20
+    </select>
+
+</mapper>
